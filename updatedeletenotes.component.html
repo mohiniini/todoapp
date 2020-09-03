@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <form #f='ngForm'>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Title</label>
+            <!-- <input type="text" class="form-control" name="namee" [(ngModel)]="profile.title" id="exampleInputEmail1"> -->
+            <input type="text" class="form-control" name="titlee" #titlee='ngModel' [(ngModel)]="completedetails.notes.title" id="exampleInputEmail1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Description</label>
+            <!-- <input type="text" class="form-control" name="content" [(ngModel)]="profile.description" id="exampleInputPassword1"> -->
+            <input type="text" class="form-control" name="descriptionn" #descriptionn='ngModel' [(ngModel)]="completedetails.notes.description" id="exampleInputPassword1 " required>
+        </div>
+
+
+        <button type="button " [disabled]="!f.form.valid" class="btn btn-success ml-3 mt-3">Update</button>
+        <button type="button " [disabled]="!f.form.valid" (click)="deleteData(f)" class="btn btn-danger ml-3 mt-3">Delete</button>
+    </form>
+</div>

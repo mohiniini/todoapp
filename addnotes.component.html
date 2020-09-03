@@ -1,0 +1,24 @@
+<div class="container mt-3">
+    <div class="text-center">
+        <h2>Add Notes</h2>
+    </div>
+
+    <form #f='ngForm'>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Title</label>
+            <!-- <input type="text" class="form-control" name="namee" [(ngModel)]="profile.jobEmployeeForm.title" id="exampleInputEmail1"> -->
+            <input type="text" class="form-control" name="title" #title='ngModel' [(ngModel)]="Title" id="exampleInputEmail1" required>
+            <div [hidden]="title.valid || title.pristine" class="alert alert-danger m-0 mt-2">Fill valid details</div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Description</label>
+            <!-- <input type="text" class="form-control" name="content" [(ngModel)]="profile.jobEmployeeForm.description" id="exampleInputPassword1"> -->
+            <input type="text" class="form-control" name="description" #description='ngModel' [(ngModel)]="Description" id="exampleInputPassword1 " required>
+            <div [hidden]="description.valid || description.pristine" class="alert alert-danger m-0 mt-2">Fill valid details</div>
+        </div>
+        <br>
+
+        <button type="button " [disabled]="!f.form.valid" (click)="FormSubmit(f)" class=" btn btn-success ">Submit</button>
+    </form>
+</div>
